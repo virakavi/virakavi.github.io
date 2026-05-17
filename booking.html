@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Booking | Palakkad Residency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html">
+                <span class="brand-name">Palakkad Residency</span>
+                <span class="brand-sub">Best-in-class Hotels & Resorts</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="booking-page">
+        <div class="booking-card" id="bookingContainer">
+            <div class="booking-header">
+                <h2>Complete Your Reservation</h2>
+                <p>Fill in your details to secure your room at Palakkad Residency.</p>
+            </div>
+
+            <form id="hotelBookingForm" class="booking-form">
+                <div class="form-section">
+                    <h4>1. Guest Information</h4>
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-section">
+                    <h4>2. Stay Details</h4>
+                    <div class="form-row">
+                        <div class="input-wrap">
+                            <label>Check-in</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="input-wrap">
+                            <label>Check-out</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+                    <select required>
+                        <option value="">Select Room Type</option>
+                        <option>Single Cot (Non-AC)</option>
+                        <option>Single Cot (AC)</option>
+                        <option>Double Cot (Non-AC)</option>
+                        <option>Double Cot (AC)</option>
+                        <option>Family Suite (Non-AC)</option>
+                        <option>Family Suite (AC)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-confirm">Confirm & Reserve Now</button>
+            </form>
+        </div>
+
+        <div id="successMessage" class="success-card" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you for choosing <strong>Palakkad Residency</strong>. We have received your request and a confirmation email has been sent to your inbox.</p>
+            <p>Your Booking Reference: <strong>#PR-2026-8821</strong></p>
+            <a href="index.html" class="btn-primary">Return to Home</a>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('hotelBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page refresh
+            document.getElementById('bookingContainer').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            window.scrollTo(0, 0);
+        });
+    </script>
+
+</body>
+</html>
